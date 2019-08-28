@@ -1,0 +1,14 @@
+{{ if isset .Params "categories" }}
+    {{ if not (eq (len .Params.categories) 0) }}
+        <span class="post-meta">
+            <span>分类: </span>
+                {{ range .Params.categories }}
+                    <a href="/categories/{{ . | urlize }}" itemprop="url" rel="index">
+                        <span itemprop="name">{{ . }}</span>
+                    </a>
+                    &nbsp;
+                {{ end }}
+            </span>
+        </span>
+    {{ end }}
+{{ end }}

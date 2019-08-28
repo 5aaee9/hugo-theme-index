@@ -1,0 +1,63 @@
+.friends-card {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    margin: 8px;
+    display: block;
+    position: relative;
+    height: 200px;
+}
+
+.friends-link {
+    height: 100%;
+    color: white !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    text-decoration: none;
+}
+
+.friends-image {
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    background-repeat: repeat;
+
+    background-position: 50% 50%;
+    background-origin: padding-box;
+    background-attachment: scroll;
+    height: 100%;
+    object-fit: cover;
+    text-shadow: 0 2px 4px rgba(0,0,0,.75);
+    flex-grow: 1;
+
+    flex-direction: row;
+
+    align-items: flex-end;
+}
+
+.firends-texts {
+    line-height: 10px;
+    margin: 0 15px;
+    
+    z-index: 4;
+    font-weight: 600;
+    font-family: Arial,"Hiragino Kaku Gothic ProN",Meiryo,"Microsoft YaHei","Apple SD Gothic Neo",sans-serif;
+    
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.image-overlay {
+    background-image: linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.7));
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: " ";
+}

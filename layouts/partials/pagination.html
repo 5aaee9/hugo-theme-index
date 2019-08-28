@@ -1,0 +1,57 @@
+{{ $pag := .Paginator }}
+{{ $tps := $pag.TotalPages }}
+
+<nav class="pagination-wapper">
+    <ul class="pagination">
+        {{ if $pag.HasPrev }}
+            <li class="page-item">
+                <a rel="prev" href="{{ $pag.Prev.URL }}">
+                    « 前一页
+                </a>
+            </li>
+        {{ end }}
+        {{ $begin := sub $pag.PageNumber 4 }}
+        {{ $end := add $pag.PageNumber 4 }}
+
+        {{ $begin = (cond (ge 1 $begin) 1 $begin) }}
+        {{ $end = (cond (lt $pag.TotalPages $end) $pag.TotalPages $end) }}
+
+        {{ $isDisplayPrev := true }}
+        {{ $isDisplayNext := true }}
+
+        {{ range $p := $pag.Pagers }}
+            {{ if (lt $p.PageNumber (sub $pag.PageNumber 4)) }}
+                {{ if $isDisplayPrev }}
+                    <li class="page-item">
+                        <span>...</span>
+                    </li>
+                    {{ $isDisplayPrev = false }}
+                {{ end }}
+            {{ end }}
+
+            {{ if and (ge $p.PageNumber $begin) (le $p.PageNumber $end) }}
+                <li class="page-item {{ if eq $p $pag }}active{{ end }}">
+                    <a href="{{ $p.URL }}">{{ $p.PageNumber }}</a>
+                </li>
+
+            {{ end }}
+
+            {{ if (ge $p.PageNumber (add $pag.PageNumber 5)) }}
+                {{ if $isDisplayNext }}
+                    <li class="page-item">
+                        <span>...</span>
+                    </li>
+                    {{ $isDisplayNext = false }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $pag.HasNext }}
+            <li class="page-item">
+                <a rel="next" href="{{ $pag.Next.URL }}">
+                    后一页 »
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>

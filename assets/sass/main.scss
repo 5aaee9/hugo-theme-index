@@ -1,0 +1,101 @@
+#page-header {
+    padding-top: 35px;
+    // padding-bottom: 25px;
+    border-bottom: 1px solid #EEE;
+
+    .title {
+        color: #333;
+        font-size: 2.5em;
+        cursor: pointer;
+    }
+
+    .description {
+        color: #999;
+        margin-top: 1rem;
+        font-size: 1em;
+    }
+}
+
+.posts {
+    .post {
+        padding: 15px 0 20px;
+        border-bottom: 1px solid #EEE;
+    }
+}
+
+.post-title {
+    font-size: 1.4em;
+}
+
+.post-meta-list {
+    color: #999;
+    margin-bottom: 1rem;
+    > .post-meta {
+        border-left: 1px solid #EEE;
+        padding-left: 12px;
+
+        &:first-child {
+            padding-left: 0;
+            border: none;
+            padding-right: 6px;
+        }
+    }
+}
+
+#nav-menu {
+    display: flex;
+    margin: 25px 0 0;
+    
+    a {
+        display: block;
+        margin-right: -1px;
+        padding: 0 20px;
+        border: 1px solid #EEE;
+        border-bottom: none;
+        height: 32px;
+        line-height: 32px;
+        color: #444;
+    }
+
+    .actived {
+        background: #F6F6F6;
+    }
+}
+
+pre, code {
+    font-family: Consolas,"SF Mono","Segoe UI Mono","Roboto Mono",Menlo,Courier,monospace;
+}
+
+.highlight {
+    font-size: 13px;
+
+    pre {
+        padding: 10px 0;
+    }
+
+    code {
+        background: unset;
+        color: unset;
+        padding: unset;
+        line-height: 1em;
+    }
+}
+
+.pagination-wapper {
+    display: grid;
+    margin: 25px 0;
+
+    > .pagination {
+        margin: auto;
+    }
+}
+
+h2 {
+    font-size: 1.28571em;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}

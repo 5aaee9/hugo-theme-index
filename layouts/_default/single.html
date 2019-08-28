@@ -1,0 +1,22 @@
+{{ define "content" }}
+
+<section id="posts" class="post-single">
+    <article temscope itemtype="http://schema.org/Article">
+    <header>
+        <h1 class="post-title" itemprop="name headline">
+            <a href="{{ .Permalink }}" itemprop="url">
+                {{ .Title }}
+            </a>
+        </h1>
+        <div class="post-meta-list">
+            {{ partial "posts/date.html" .}} 
+            {{ partial "posts/categorie.html" .}}
+        </div>
+    </header>
+        <div itemprop="articleBody">
+            {{ .Content }}
+        </div>
+    </article>
+</section>
+
+{{ end }}
