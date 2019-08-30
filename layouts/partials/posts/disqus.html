@@ -1,0 +1,6 @@
+{{ if .Site.Params.disqusEnable }}
+    <div id="disqus_thread"></div>
+    <script>
+        new DisqusJS(JSON.parse({{ .Site.Params.disqusConfig | jsonify }}))
+    </script>
+{{ end }}
