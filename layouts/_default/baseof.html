@@ -5,7 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {{ hugo.Generator }}
         {{ partial "meta.html" . }}
-        <title>{{ .Title }} - {{ .Site.Title }}</title>
+        {{ if or (eq .Title .Site.Title) (eq .Title "") }}
+            <title>{{ .Site.Title }}</title>
+        {{ else }}
+            <title>{{ .Title }} - {{ .Site.Title }}</title>
+        {{ end }}
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.8/dist/spectre.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
