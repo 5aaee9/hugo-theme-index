@@ -4,18 +4,19 @@
 {{ end }}
 
 {{ define "content" }}
-
-    {{ range .Params.links }}
-        <div class="friends-card">
-            <a class="friends-link" href="{{ .url }}">
-                <div class="image-overlay"></div>
-                <div class="friends-image" style="background-image:url({{ .image }})">
-                    <div class="firends-texts">
-                        <h2>{{ .name }}</h2>
-                        <h3>{{ .descp }}</h3>
+    <div class="friends-lists">
+        {{ range .Params.links }}
+            <div class="friends-card">
+                <a class="friends-link" href="{{ .url }}">
+                    <div class="image-overlay"></div>
+                    <div class="friends-image" style="background-image:url({{ .image }})">
+                        <div class="firends-texts">
+                            <h2>{{ .name }}</h2>
+                            <h3>{{ .descp }}</h3>
+                        </div>
                     </div>
-                </div>
-            </a>    
-        </div>
-    {{ end }}
+                </a>    
+            </div>
+        {{ end }}
+    </div>
 {{ end }}
