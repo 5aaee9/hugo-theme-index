@@ -1,0 +1,23 @@
+<ul class="pagination">
+    {{ if .PrevInSection }}
+    {{ with .PrevInSection }}
+    <li class="page-item page-prev">
+        <a href="{{ .Permalink }}">
+            <div class="page-item-subtitle">上一篇</div>
+            <div class="page-item-title h5">{{ .Title }}</div>
+        </a>
+    </li>
+    {{ end }}
+    {{ end }}
+
+    {{ if .PrevInSection }}
+    {{ with .PrevInSection }}
+    <li class="page-item page-next">
+        <a href="{{ .Permalink }}">
+            <div class="page-item-subtitle">下一篇</div>
+            <div class="page-item-title h5">{{ .Title }}</div>
+        </a>
+    </li>
+    {{ end }}
+    {{ end }}
+</ul>
