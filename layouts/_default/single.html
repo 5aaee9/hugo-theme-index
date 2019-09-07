@@ -9,11 +9,11 @@
                 </a>
             </h1>
             <div class="post-meta-list">
-                {{ partial "posts/date.html" .}} 
+                {{ partial "posts/date.html" .}}
                 {{ partial "posts/categorie.html" .}}
             </div>
         </header>
-        <div itemprop="articleBody">
+        <div class="post-body" itemprop="articleBody">
             {{ .Content }}
         </div>
     </article>

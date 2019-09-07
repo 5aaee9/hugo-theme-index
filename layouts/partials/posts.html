@@ -12,7 +12,7 @@
                     {{ partial "posts/categorie.html" . }}
                 </div>
             </header>
-            <div itemprop="articleBody">
+            <div class="post-body" itemprop="articleBody">
                 {{ .Summary }}
             </div>
             {{ if .Truncated }}

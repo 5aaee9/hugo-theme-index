@@ -45,7 +45,7 @@
 #nav-menu {
     display: flex;
     margin: 25px 0 0;
-    
+
     a {
         display: block;
         margin-right: -1px;
@@ -107,5 +107,20 @@ a {
 
     p {
         margin: 0 0 0.5rem;
+    }
+}
+
+.post-body {
+    img {
+        max-width: 100%;
+        border-style: none;
+
+        box-sizing: content-box;
+    }
+
+    .highlight {
+        display: block;
+        width: 100%;
+        overflow: auto;
     }
 }
