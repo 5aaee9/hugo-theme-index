@@ -124,3 +124,9 @@ a {
         overflow: auto;
     }
 }
+
+.post-single {
+    .pagination .page-item a {
+        padding: 1rem 0rem;
+    }
+}
