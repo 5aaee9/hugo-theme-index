@@ -130,3 +130,8 @@ a {
         padding: 1rem 0rem;
     }
 }
+
+code {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
