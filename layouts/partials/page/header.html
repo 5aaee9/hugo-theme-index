@@ -1,0 +1,15 @@
+<header id="page-header">
+    <div class="container grid-lg">
+        <a href="{{ .Site.BaseURL }}" class="title">{{ .Site.Title }}</a>
+        <h2 class="description">{{ .Site.Params.description }}</h2>
+
+        <div>
+            <nav id="nav-menu" role="navigation">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <a {{ if $currentPage.IsMenuCurrent "main" . }}class="actived"{{ end }} href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+        </div>
+    </div>
+</header>

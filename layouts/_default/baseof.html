@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Page.Language | default "en" }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {{ hugo.Generator }}
         {{ partial "meta.html" . }}
         {{ if or (eq .Title .Site.Title) (eq .Title "") }}
@@ -11,13 +9,7 @@
             <title>{{ .Title }} - {{ .Site.Title }}</title>
         {{ end }}
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.8/dist/spectre.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
-
-        <link rel="stylesheet" href="{{ (resources.Get "css/syntax.css").Permalink }}">
-
-        {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-        <link rel="stylesheet" href="{{ $style.Permalink }}">
+        {{ partial "styles.html" . }}
 
         {{ block "head" . }}
         {{ end }}
@@ -26,21 +18,7 @@
         {{ partial "plugins/gtag.html" . }}
     </head>
     <body>
-        <header id="page-header">
-            <div class="container grid-lg">
-                <a href="{{ .Site.BaseURL }}" class="title">{{ .Site.Title }}</a>
-                <h2 class="description">{{ .Site.Params.description }}</h2>
-
-                <div>
-                    <nav id="nav-menu" role="navigation">
-                        {{ $currentPage := . }}
-                        {{ range .Site.Menus.main }}
-                        <a {{ if $currentPage.IsMenuCurrent "main" . }}class="actived"{{ end }} href="{{ .URL }}">{{ .Name }}</a>
-                        {{ end }}
-                    </nav>
-                </div>
-            </div>
-        </header>
+        {{ partial "page/header.html" . }}
 
         <main>
             <div class="container grid-lg">
@@ -49,11 +27,6 @@
             </div>
         </main>
 
-        <footer class="page-footer">
-            <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
-            <p>Power by
-                <a href="https://gohugo.io/">Hugo</a> | Theme
-                <a href="https://github.com/Indexyz/hugo-theme-index/">Index</a></p>
-        </footer>
+        {{ partial "page/footer.html" . }}
     </body>
 </html>
