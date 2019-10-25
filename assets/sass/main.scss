@@ -1,3 +1,12 @@
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+}
+
+pre, code {
+    font-family: Consolas,"SF Mono","Segoe UI Mono","Roboto Mono",Menlo,Courier,monospace;
+}
+
+
 #page-header {
     padding-top: 35px;
     // padding-bottom: 25px;
@@ -60,10 +69,6 @@
     .actived {
         background: #F6F6F6;
     }
-}
-
-pre, code {
-    font-family: Consolas,"SF Mono","Segoe UI Mono","Roboto Mono",Menlo,Courier,monospace;
 }
 
 .highlight {
@@ -135,8 +140,5 @@ code {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     word-break: break-all;
-}
-
-body {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+    font-size: 13px;
 }
